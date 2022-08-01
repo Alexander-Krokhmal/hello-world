@@ -7,14 +7,22 @@ function makeUserInfo(name, age) {
 };
 
 let user = makeUserInfo("Goblin", 118);
-console.log(user);
+// console.log(user);
 
-console.log(user.name);
+// console.log(user.name);
 
-userinfo.adressGross = {
-    planet: "Goblonomia",
-    materic: "Head",
-    city: "UnderGround",
-}
+showName();
+function showName() {
+    console.log('VasyaLong!');
+} 
+setTimeout(showName, 0);
+console.log('Kolya!');
 
-console.log(userinfo);
+
+let showMessage;
+if (2 > 1) {
+    showMessage = () => {
+        console.log('Vasya15!');
+    };
+};
+showMessage();
