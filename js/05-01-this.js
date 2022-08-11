@@ -62,31 +62,31 @@ class User {
 
 
 //---Конструктор дочернего класса---
-class User {
-    constructor(email) {
-      this.email = email;
-    }
+// class User2 {
+//     constructor(email) {
+//       this.email = email;
+//     };
   
-    get email() {
-      return this.email;
-    }
+//     get email() {
+//       return this.email;
+//     };
   
-    set email(newEmail) {
-      this.email = newEmail;
-    }
-  }
+//     set email(newEmail) {
+//       this.email = newEmail;
+//     };
+// };
   
-  class ContentEditor extends User {
-    constructor({ email, posts }) {
-      // Вызов конструктора родительского класса User
-      super(email);
-      this.posts = posts;
-    }
-  }
+//   class ContentEditor extends User2 {
+//     constructor({ email, posts }) {
+//       // Вызов конструктора родительского класса User
+//       super(email);
+//       this.posts = posts;
+//       };
+// };
   
-  const editor = new ContentEditor({ email: "mango@mail.com", posts: [] });
-  console.log(editor); // { email: 'mango@mail.com', posts: [] }
-console.log(editor.email); // 'mango@mail.com'
+//   const editor = new ContentEditor({ email: "mango@mail.com", posts: [] });
+// console.log(editor); // { email: 'mango@mail.com', posts: [] }
+// console.log(editor.email); // 'mango@mail.com'
   
 
 
@@ -428,4 +428,39 @@ function fnCreator() {
     }
   }
   
-  slowManager.doMath(calculator, 8, 2);
+slowManager.doMath(calculator, 8, 2);
+  
+
+const animal = {
+    eats: true,
+  };
+  const dog2 = Object.create(animal);
+  dog.barks = true;
+  
+  for (const key in dog2) {
+    if (!dog2.hasOwnProperty(key)) continue;
+  
+    console.log(key); // barks
+  }
+
+
+
+class User3 {
+static #takenEmails = [];
+
+static isEmailTaken(email) {
+    return User3.#takenEmails.includes(email);
+}
+
+#email;
+
+constructor({ email }) {
+    this.#email = email;
+    User3.#takenEmails.push(email);
+}
+}
+
+const mango2 = new User3({ email: "mango@mail.com" });
+  
+console.log(User3.isEmailTaken("poly@mail.com"));
+console.log(User3.isEmailTaken("mango@mail.com"));
