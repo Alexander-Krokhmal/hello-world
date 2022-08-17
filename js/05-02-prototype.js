@@ -157,22 +157,57 @@ console.log('eminem'.toTag('em'))
 
 // Answers the questions
 
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //Cicle 'for'
-for (let i = 0; i < array.length; i += 1){
-    console.log(array[i]);
-}
+
+// for (let i = 0; i < array2.length; i += 1){
+//     console.log(array2[i]);
+// }
 
 //Cicle 'while' - аналог for, разница в переменной i (тут она в глобальной обл.видимости)
-let i = 0;
-while (i < array.length) {
-    console.log(array[i]);
-    i += 1;
-}
+
+// let i = 0;
+// while (i < array2.length) {
+//     console.log(array2[i]);
+//     i += 1;
+// }
 
 //Cicle 'do...while' - выполнится обязательно один раз!
-let i = 0;
-do {
-    console.log(array[i]);
-    i += 1;
-} while (i < array.length);
+
+// let i = 0;
+// do {
+//     console.log(array2[i]);
+//     i += 1;
+// } while (i < thirdArray2.length);
+
+
+
+
+const createPrinter = () => {
+    let name = 5;
+
+    const printName = () => {
+        console.log(name++);
+    }
+    return printName;
+}
+
+const myPrinter = createPrinter();
+
+myPrinter();
+myPrinter();
+myPrinter();
+
+
+
+const arr = [1, 2, 1, 45, 45, 8];
+const mySet = new Set(arr);
+const mySet2 = Array.from(new Set(arr));
+
+console.log(mySet2);
+
+
+
+
+
+
